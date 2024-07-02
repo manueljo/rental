@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Arent | Find an apartment</title>
+{% endblock title %}
+
+{% block content %}
+<div class="d-flex justify-content-center h-70">
+    <div style="width:900px;" class='m-2 '>
+        {{mapping|safe}}
+    </div>
+</div>
+{% endblock content %}

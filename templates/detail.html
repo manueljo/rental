@@ -1,0 +1,64 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% load humanize %} 
+{% block title %}
+<title>Arent | Apartment detail</title>
+{% endblock title %} {% block content %}
+
+<div class="container p-2">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{{ apartment.room_image.url }}" />
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ apartment.toilet_image.url }}" />
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ apartment.kitchen_image.url }}" />
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ apartment.outside_image.url }}" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 p-0">
+      <div class="card rounded-3 border-0">
+        <div class="card-body p-5">
+          <h1 class="fs-4">Description</h1>
+          <p>
+            {{apartment.description}}
+            <br /><br>
+            <strong>Is it Available?</strong><br />
+            {% if apartment.available %} 
+            &#9989;{% else %} 
+            &#10060;{% endif %}
+          </p>
+          <div class="d-flex justify-content-evenly g-4 flex-wrap">
+            <div>
+              <p class="fs-5">Name</p>
+              <p>{{apartment.name}}</p>
+            </div>
+            <div>
+              <p class="fs-5">Area</p>
+              <p>{{apartment.area}}</p>
+            </div>
+            <div>
+              <p class="fs-5">Address</p>
+              <p>{{apartment.address}}</p>
+            </div>
+            <div>
+              <p class="fs-5">Price</p>
+              <p>&#8358; {{apartment.price|intcomma}}</p>
+            </div>
+          </div>
+          <a href="https://wa.me/2349155334411" target="_blank" class="btn btn-success text-xl">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
