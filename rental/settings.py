@@ -145,7 +145,7 @@ GEOPOSITION_BACKEND = 'leaflet'
 
 GEOPOSITION_MAP_OPTIONS = {
     'minZoom': 3,
-    # 'maxZoom': 15,
+    'maxZoom': 18,
     'parentSelector': 'li.changeform-tabs-item',
     'isDjangoAdmin': True
 }

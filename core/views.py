@@ -8,7 +8,7 @@ def index(request):
     area = Areas.objects.first()
     cordinate = [area.location.latitude, area.location.longitude]
     folium_map = folium.Map(location=cordinate, zoom_start=15).add_child(folium.LatLngPopup())
-    # folium.TileLayer('stamenterrain',attr='quest').add_to(folium_map)
+    folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',attr='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community').add_to(folium_map)
         
     locate = []
     # cordinates = []
@@ -17,7 +17,7 @@ def index(request):
         lng = apartment.get('location').longitude
         locate.append(lat)
         locate.append(lng)
-        print(apartment.get('available'))
+        # print(apartment.get('available'))
         if apartment.get('available'):
             folium.Marker(locate, popup=f"<a href='/apartment_detail/{apartment['id']}/' target='_top'>View apartment</a><br> "+apartment['name'],tooltip='click me!!',icon=folium.Icon(color="green")).add_to(folium_map)
         else:
