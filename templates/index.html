@@ -6,6 +6,12 @@
 {% endblock title %}
 
 {% block content %}
+<form  class="d-flex justify-content-center" >
+    {{form.area}}
+    <button class='btn btn-primary' type='submit'>Submit</button>
+</form>
+<div>
+</div>
 <div class="d-flex justify-content-center h-70">
     <div style="width:900px;" class='m-2 '>
         {{mapping|safe}}
