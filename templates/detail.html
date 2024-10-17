@@ -10,18 +10,26 @@
     <div class="col-md-6">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+          {% if apartment.room_image %}
           <div class="swiper-slide">
             <img src="{{ apartment.room_image.url }}" />
           </div>
+          {% endif %}
+          {% if apartment.toilet_image  %}
           <div class="swiper-slide">
-            <img src="{{ apartment.toilet_image.url }}" />
+            <img src="{{ apartment.toilet_image.url  }}" />
           </div>
+          {% endif %}
+          {% if apartment.kitchen_image  %}
           <div class="swiper-slide">
-            <img src="{{ apartment.kitchen_image.url }}" />
+            <img src="{{ apartment.kitchen_image.url  }}" />
           </div>
+          {% endif %}
+          {% if apartment.outside_image %}
           <div class="swiper-slide">
             <img src="{{ apartment.outside_image.url }}" />
           </div>
+          {% endif %}
         </div>
       </div>
     </div>

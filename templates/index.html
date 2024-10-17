@@ -6,14 +6,13 @@
 {% endblock title %}
 
 {% block content %}
-<form  class="d-flex justify-content-center" >
+<form  class="d-flex justify-content-center my-4" hx-post="{% url "get_map" %}" hx-target="#my-map" hx-swap="innerHTML" hx-trigger="change">
     {{form.area}}
     <button class='btn btn-primary' type='submit'>Submit</button>
 </form>
-<div>
-</div>
+
 <div class="d-flex justify-content-center h-70">
-    <div style="width:900px;" class='m-2 '>
+    <div style="width:900px;" class='m-2 ' id='my-map'>
         {{mapping|safe}}
     </div>
 </div>

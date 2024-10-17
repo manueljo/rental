@@ -15,11 +15,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <script src="{% static 'htmx.min.js' %}" defer></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   </head>
 
-  <body class="bg-base-100">
+  <body class="bg-base-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <div class="navbar bg-base-100 glass sticky mb-2">
       <a href="{% url 'homepage' %}" class="btn btn-ghost text-xl"> ARENT </a>
     </div>
